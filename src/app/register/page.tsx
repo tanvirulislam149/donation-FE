@@ -7,13 +7,7 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import { useRouter } from "next/navigation";
-
-interface IUser extends HTMLFormElement {
-	userName: HTMLInputElement;
-	email: HTMLInputElement;
-	password: HTMLInputElement;
-	confirmPassword: HTMLInputElement;
-}
+import { IUser } from "@/types/globalTypes";
 
 const Register = () => {
 	const [createUserWithEmailAndPassword, user, loading, error] =
