@@ -37,12 +37,14 @@ const Navbar = () => {
 							<Link href={"/"}>Home</Link>
 						</li>
 						<li className="py-2">
-							<Link href={"/"}>Donations</Link>
+							<Link href={"/donation"}>Donations</Link>
 						</li>
 						<li className="py-2">
-							<Link href={"/"}>Statistics</Link>
+							<Link href={"/statistics"}>Statistics</Link>
 						</li>
-						<button className="btn btn-primary my-2">Login</button>
+						<Link href={"/login"}>
+							<button className="btn btn-primary my-2">Login</button>
+						</Link>
 					</ul>
 				</div>
 			</div>
@@ -51,13 +53,15 @@ const Navbar = () => {
 					<Link className="px-6" href={"/"}>
 						Home
 					</Link>
-					<Link className="px-6" href={"/"}>
+					<Link className="px-6" href={"/donation"}>
 						Donations
 					</Link>
-					<Link className="px-6" href={"/"}>
+					<Link className="px-6" href={"/statistics"}>
 						Statistics
 					</Link>
-					<button className="btn btn-primary">Login</button>
+					<Link href={"/login"}>
+						<button className="btn btn-primary">Login</button>
+					</Link>
 				</ul>
 			</div>
 		</div>
