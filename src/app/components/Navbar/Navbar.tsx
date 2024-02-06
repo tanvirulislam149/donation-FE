@@ -1,9 +1,12 @@
+"use client";
 import Link from "next/link";
 import logo from "../../../assets/Logo.png";
 import Image from "next/image";
 import AuthButton from "./AuthButton/AuthButton";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+	const pathname = usePathname();
 	return (
 		<div className="navbar bg-base-100 md:px-10 py-3 sticky top-0">
 			<div className="navbar-start">
@@ -49,13 +52,34 @@ const Navbar = () => {
 			</div>
 			<div className="navbar-end hidden lg:flex">
 				<ul className="menu menu-horizontal px-1 items-center">
-					<Link className="px-6" href={"/"}>
+					<Link
+						className={`${
+							pathname === "/"
+								? "text-red-500 font-bold border-b-2 border-red-500"
+								: ""
+						} px-3 mx-3`}
+						href={"/"}
+					>
 						Home
 					</Link>
-					<Link className="px-6" href={"/donation"}>
+					<Link
+						className={`${
+							pathname === "/donation"
+								? "text-red-500 font-bold border-b-2 border-red-500"
+								: ""
+						} px-3 mx-3`}
+						href={"/donation"}
+					>
 						Donations
 					</Link>
-					<Link className="px-6" href={"/statistics"}>
+					<Link
+						className={`${
+							pathname === "/statistics"
+								? "text-red-500 font-bold border-b-2 border-red-500"
+								: ""
+						} px-3 mx-3`}
+						href={"/statistics"}
+					>
 						Statistics
 					</Link>
 					<AuthButton />
