@@ -1,6 +1,7 @@
 import Link from "next/link";
 import logo from "../../../assets/Logo.png";
 import Image from "next/image";
+import AuthButton from "./AuthButton/AuthButton";
 
 const Navbar = () => {
 	return (
@@ -42,9 +43,7 @@ const Navbar = () => {
 						<li className="py-2">
 							<Link href={"/statistics"}>Statistics</Link>
 						</li>
-						<Link href={"/login"}>
-							<button className="btn btn-primary my-2">Login</button>
-						</Link>
+						<AuthButton />
 					</ul>
 				</div>
 			</div>
@@ -59,9 +58,7 @@ const Navbar = () => {
 					<Link className="px-6" href={"/statistics"}>
 						Statistics
 					</Link>
-					<Link href={"/login"}>
-						<button className="btn btn-primary">Login</button>
-					</Link>
+					<AuthButton />
 				</ul>
 			</div>
 		</div>
