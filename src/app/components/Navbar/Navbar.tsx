@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 const Navbar = () => {
 	const pathname = usePathname();
 	return (
-		<div className="navbar bg-base-100 md:px-10 py-3 sticky top-0">
+		<div className="navbar bg-base-100 md:px-10 py-3 sticky top-0 z-10">
 			<div className="navbar-start">
 				<Link href={"/"}>
 					<Image src={logo} width={200} height={200} alt="logo" />
