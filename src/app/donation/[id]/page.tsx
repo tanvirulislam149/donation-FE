@@ -4,7 +4,7 @@ const DonationDetails = ({ params }: { params: { id: string } }) => {
 	console.log(params);
 	return (
 		<div className="flex justify-center my-14">
-			<div className="card card-compact w-\ bg-base-100 ">
+			<div className="card card-compact bg-base-100 ">
 				<figure>
 					<img
 						className="w-full h-full"
