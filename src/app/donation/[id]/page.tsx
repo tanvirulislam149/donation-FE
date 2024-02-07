@@ -1,23 +1,37 @@
+import Image from "next/image";
 import React from "react";
 
-const DonationDetails = ({ params }: { params: { id: string } }) => {
-	console.log(params);
+const getData = async ({ id }: { id: string }) => {
+	const res = await fetch(`http://localhost:5000/getDonation/${id}`, {
+		cache: "no-store",
+	});
+	return res.json();
+};
+
+const DonationDetails = async ({ params }: { params: { id: string } }) => {
+	const data = await getData(params);
 	return (
-		<div className="flex justify-center my-14">
-			<div className="card card-compact bg-base-100 ">
+		<div className="flex justify-center my-4">
+			<div className="card w-1/2 bg-base-100">
 				<figure>
-					<img
-						className="w-full h-full"
-						src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+					<Image
+						className=""
+						src={data.picture_url}
 						alt="Shoes"
+						width={0}
+						height={0}
+						sizes="100vw"
+						style={{ width: "100%", height: "auto" }} // optional
 					/>
 				</figure>
 				<div className="card-actions -mt-16 pl-4 py-5 bg-slate-300">
-					<button className="btn btn-primary">Donate $290.00</button>
+					<button className="btn btn-error text-white">
+						Donate ${data.money}
+					</button>
 				</div>
 				<div className="card-body mt-5">
-					<h2 className="card-title">Good Education {params.id}</h2>
-					<p>If a dog chews shoes whose shoes does he choose?</p>
+					<h2 className="card-title">{data.title}</h2>
+					<p>{data.description}</p>
 				</div>
 			</div>
 		</div>

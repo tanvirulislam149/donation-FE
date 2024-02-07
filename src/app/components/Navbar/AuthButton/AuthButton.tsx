@@ -11,7 +11,7 @@ const AuthButton = () => {
 		<div>
 			{user ? (
 				<button
-					onClick={async () => await signOut()}
+					onClick={() => signOut()}
 					className="btn btn-primary m-3 md:m-0"
 				>
 					Log out

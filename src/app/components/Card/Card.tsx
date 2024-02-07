@@ -1,12 +1,19 @@
+"use client";
 import { IDonation } from "@/types/globalTypes";
 import randomColor from "@/utils/randomColor";
 import Image from "next/image";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 const Card = ({ data }: { data: IDonation }) => {
+	const router = useRouter();
 	const { cardBg, categoryBg, textColor } = randomColor();
 	return (
-		<div>
+		// <div>
+		<div
+			className="cursor-pointer"
+			onClick={() => router.push(`/donation/${data._id}`)}
+		>
 			<div
 				style={{ backgroundColor: cardBg }}
 				className="card w-96 bg-base-100 shadow-xl"
@@ -24,7 +31,7 @@ const Card = ({ data }: { data: IDonation }) => {
 					<p>
 						<span
 							style={{ backgroundColor: categoryBg, color: textColor }}
-							className="p-2 text-sm"
+							className="p-2 text-sm font-bold"
 						>
 							{data.donation_category}
 						</span>
