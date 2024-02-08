@@ -1,7 +1,12 @@
+import AdminStatistics from "@/app/components/AdminStatistics/AdminStatistics";
 import React from "react";
 
 const Statistics = () => {
-	return <div>Statistics</div>;
+	return (
+		<div>
+			<AdminStatistics />
+		</div>
+	);
 };
 
 export default Statistics;
