@@ -7,15 +7,15 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 		<PrivateAdminRoute>
 			<div className="drawer lg:drawer-open">
 				<input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-				<div className="drawer-content flex flex-col items-center justify-center">
+				<div className="drawer-content">
 					{/* Page content here */}
-					{children}
 					<label
 						htmlFor="my-drawer-2"
-						className="btn btn-primary drawer-button lg:hidden"
+						className="btn btn-primary drawer-button lg:hidden m-4"
 					>
 						Open drawer
 					</label>
+					{children}
 				</div>
 				<div className="drawer-side">
 					<label
@@ -32,12 +32,12 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 						</li>
 						<li>
 							<Link className="py-4" href={"/Dashboard/updateDonation"}>
-								Update Donation
+								Manage Donation
 							</Link>
 						</li>
 						<li>
-							<Link className="py-4" href={"/Dashboard/deleteDonation"}>
-								Delete Donation
+							<Link className="py-4" href={"/Dashboard/createAdmin"}>
+								Create Admin
 							</Link>
 						</li>
 						<li>

@@ -13,3 +13,11 @@ export interface IDonation {
   donation_category: string,
   description: string
 }
+
+export interface ICreateDonation extends HTMLFormElement {
+  titleName: HTMLInputElement,
+  picture_url: HTMLInputElement,
+  money: HTMLInputElement,
+  donation_category: HTMLInputElement,
+  description: HTMLInputElement
+}
