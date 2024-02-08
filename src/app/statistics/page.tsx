@@ -1,9 +1,13 @@
 import React from "react";
+import UserStatistics from "../components/UserStatistics/UserStatistics";
+import PrivateRoute from "../components/PrivateRoute";
 
 const Statistics = () => {
 	return (
 		<div>
-			<p>check</p>
+			<PrivateRoute>
+				<UserStatistics />
+			</PrivateRoute>
 		</div>
 	);
 };
