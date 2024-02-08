@@ -8,17 +8,22 @@ import {
 import auth from "../../../firebase.init";
 import { useRouter } from "next/navigation";
 import { IUser } from "@/types/globalTypes";
+import axios from "axios";
 
 const Register = () => {
 	const [createUserWithEmailAndPassword, user, loading, error] =
 		useCreateUserWithEmailAndPassword(auth);
 	const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 	const [errorMsg, setErrorMsg] = useState<string | undefined>("");
+	const [name, setName] = useState("");
 	const router = useRouter();
 
 	useEffect(() => {
 		if (user) {
-			// console.log(user);
+			const data = { name, email: user?.user.email, role: "user" };
+			axios
+				.post("http://localhost:5000/postUser", data)
+				.then((res) => console.log(res));
 			setErrorMsg("");
 			(document.getElementById("register") as HTMLFormElement).reset();
 			router.push("/");
@@ -59,6 +64,7 @@ const Register = () => {
 						placeholder="Enter your name"
 						className="input input-bordered w-full"
 						required
+						onChange={(e) => setName(e.target.value)}
 					/>
 					<div className="label">
 						<span className="label-text">Email:</span>

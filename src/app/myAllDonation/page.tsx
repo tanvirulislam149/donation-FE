@@ -16,10 +16,11 @@ const DonationCardCont = () => {
 			.catch(function (error) {
 				console.log(error);
 			});
-	}, []);
+	}, [user]);
 	return (
 		<div className="flex justify-center my-5">
 			<div className="overflow-x-auto w-3/4">
+				<p className="text-center text-3xl font-bold mb-5">My Donations</p>
 				{data.length ? (
 					<table className="table">
 						{/* head */}
@@ -33,7 +34,7 @@ const DonationCardCont = () => {
 						</thead>
 						<tbody>
 							{data.map((d: IDonation, index) => (
-								<tr>
+								<tr key={d._id}>
 									<th>{index + 1}</th>
 									<td>{d.title}</td>
 									<td>{d.donation_category}</td>
