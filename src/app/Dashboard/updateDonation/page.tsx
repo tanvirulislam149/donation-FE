@@ -1,5 +1,6 @@
 "use client";
 
+import DeleteModal from "@/app/components/DeleteModal/DeleteModal";
 import UpdateModal from "@/app/components/UpdateModal/UpdateModal";
 import { IDonation } from "@/types/globalTypes";
 import axios from "axios";
@@ -62,7 +63,14 @@ const UpdateDonation = () => {
 										<td>
 											<button
 												className="btn btn-sm btn-error"
-												onClick={() => setId(d._id)}
+												onClick={() => {
+													setId(d._id);
+													(
+														document.getElementById(
+															"deleteModal"
+														) as HTMLFormElement
+													)?.showModal();
+												}}
 											>
 												Delete
 											</button>
@@ -77,6 +85,7 @@ const UpdateDonation = () => {
 				</div>
 			</div>
 			<UpdateModal getDonation={getDonation} id={id} />
+			<DeleteModal getDonation={getDonation} id={id} />
 		</div>
 	);
 };
