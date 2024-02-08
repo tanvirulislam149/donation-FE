@@ -29,11 +29,15 @@ const DonationCardCont = () => {
 						<p>No Data found</p>
 					)}
 				</div>
-				<div className="flex justify-center mt-10">
-					<Link href={"/myAllDonation"}>
-						<button className="btn btn-primary">See All</button>
-					</Link>
-				</div>
+				{data.length ? (
+					<div className="flex justify-center mt-10">
+						<Link href={"/myAllDonation"}>
+							<button className="btn btn-primary">See All</button>
+						</Link>
+					</div>
+				) : (
+					""
+				)}
 			</div>
 		</div>
 	);
