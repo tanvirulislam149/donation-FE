@@ -5,6 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../../firebase.init";
 import axios from "axios";
 import { IDonation } from "@/types/globalTypes";
+import Link from "next/link";
 
 const DonationCardCont = () => {
 	const [user, loading] = useAuthState(auth);
@@ -21,16 +22,18 @@ const DonationCardCont = () => {
 	return (
 		<div className="flex justify-center">
 			<div>
-				<div className="grid grid-cols-2 gap-16">
+				<div className="grid grid-cols-2 gap-10">
 					{data.length ? (
 						data.map((d: IDonation) => <DonationCard key={d._id} data={d} />)
 					) : (
 						<p>No Data found</p>
 					)}
 				</div>
-				{/* <div className="flex justify-center mt-10">
-					<button className="btn btn-primary">See All</button>
-				</div> */}
+				<div className="flex justify-center mt-10">
+					<Link href={"/myAllDonation"}>
+						<button className="btn btn-primary">See All</button>
+					</Link>
+				</div>
 			</div>
 		</div>
 	);
