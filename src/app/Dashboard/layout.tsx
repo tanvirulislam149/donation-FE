@@ -23,7 +23,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 						aria-label="close sidebar"
 						className="drawer-overlay"
 					></label>
-					<ul className="menu p-4 w-64 h-full bg-base-200 text-base-content">
+					<ul className="menu p-4 w-64 h-full bg-base-200 text-base-content pt-24 lg:pt-0">
 						{/* Sidebar content here */}
 						<li>
 							<Link className="py-4" href={"/Dashboard/createDonation"}>

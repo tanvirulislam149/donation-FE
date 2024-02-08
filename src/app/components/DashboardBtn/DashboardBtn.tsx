@@ -25,12 +25,9 @@ const DashboardBtn = () => {
 	return (
 		<div>
 			{admin ? (
-				<Link
-					className="md:px-4 px-3 py-4 md:py-0"
-					href={"/Dashboard/createDonation"}
-				>
-					Dashboard
-				</Link>
+				<li className="lg:px-4 px-0 py-2 lg:py-0">
+					<Link href={"/Dashboard/createDonation"}>Dashboard</Link>
+				</li>
 			) : (
 				""
 			)}

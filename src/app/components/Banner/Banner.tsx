@@ -12,7 +12,7 @@ const Banner = () =>
 	{
 		return (
 			<div className={`h-screen flex justify-center pt-48 ${styles.bannerImg}`}>
-				<div>
+				<div className="mx-5">
 					<p className="text-center text-5xl font-bold mb-5">
 						I Grow By Helping People In Need
 					</p>

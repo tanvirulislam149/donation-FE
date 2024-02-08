@@ -16,7 +16,7 @@ const Card = ({ data }: { data: IDonation }) => {
 		>
 			<div
 				style={{ backgroundColor: cardBg }}
-				className="card w-96 bg-base-100 shadow-xl"
+				className="card sm:w-96 bg-base-100 shadow-xl"
 			>
 				<figure>
 					<Image

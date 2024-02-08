@@ -15,7 +15,7 @@ const DonationCard = ({ data }: { data: IDonation }) => {
 			>
 				<figure>
 					<Image
-						className="w-64 h-56"
+						className="w-64 h-full"
 						src={data.picture_url}
 						alt="Picture of the author"
 						width={500}

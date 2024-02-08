@@ -22,7 +22,7 @@ const DonationCardCont = () => {
 	return (
 		<div className="flex justify-center">
 			<div>
-				<div className="grid grid-cols-2 gap-10">
+				<div className="grid lg:grid-cols-2 gap-10 mx-3">
 					{data.length ? (
 						data.map((d: IDonation) => <DonationCard key={d._id} data={d} />)
 					) : (
