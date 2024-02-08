@@ -1,7 +1,12 @@
+import CreateAdmin from "@/app/components/CreateAdmin/CreateAdmin";
 import React from "react";
 
-const CreateAdmin = () => {
-	return <div></div>;
+const CreateAdminPage = () => {
+	return (
+		<div>
+			<CreateAdmin />
+		</div>
+	);
 };
 
-export default CreateAdmin;
+export default CreateAdminPage;

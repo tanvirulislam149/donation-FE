@@ -13,7 +13,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 						htmlFor="my-drawer-2"
 						className="btn btn-primary drawer-button lg:hidden m-4"
 					>
-						Open drawer
+						Menu
 					</label>
 					{children}
 				</div>

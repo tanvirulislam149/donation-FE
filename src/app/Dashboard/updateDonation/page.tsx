@@ -26,7 +26,9 @@ const UpdateDonation = () => {
 		<div>
 			<div className="flex justify-center my-5">
 				<div className="overflow-x-auto w-3/4">
-					<p className="text-center text-3xl font-bold mb-5">My Donations</p>
+					<p className="text-center text-3xl font-bold mb-5">
+						Manage Donations
+					</p>
 					{data.length ? (
 						<table className="table">
 							{/* head */}
