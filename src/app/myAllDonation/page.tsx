@@ -4,6 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import axios from "axios";
 import { IDonation } from "@/types/globalTypes";
 import auth from "../../../firebase.init";
+import PrivateRoute from "../components/PrivateRoute";
 
 const DonationCardCont = () => {
 	const [user, loading] = useAuthState(auth);
@@ -18,43 +19,38 @@ const DonationCardCont = () => {
 			});
 	}, [user]);
 	return (
-		<div className="flex justify-center my-5">
-			<div className="overflow-x-auto w-3/4">
-				<p className="text-center text-3xl font-bold mb-5">My Donations</p>
-				{data.length ? (
-					<table className="table">
-						{/* head */}
-						<thead>
-							<tr className="text-black">
-								<th>#</th>
-								<th>title</th>
-								<th>Category</th>
-								<th>Donation</th>
-							</tr>
-						</thead>
-						<tbody>
-							{data.map((d: IDonation, index) => (
-								<tr key={d._id}>
-									<th>{index + 1}</th>
-									<td>{d.title}</td>
-									<td>{d.donation_category}</td>
-									<td>${d.money}</td>
+		<PrivateRoute>
+			<div className="flex justify-center my-5">
+				<div className="overflow-x-auto w-3/4">
+					<p className="text-center text-3xl font-bold mb-5">My Donations</p>
+					{data.length ? (
+						<table className="table">
+							{/* head */}
+							<thead>
+								<tr className="text-black">
+									<th>#</th>
+									<th>title</th>
+									<th>Category</th>
+									<th>Donation</th>
 								</tr>
-							))}
-						</tbody>
-					</table>
-				) : (
-					<p>No Data found</p>
-				)}
+							</thead>
+							<tbody>
+								{data.map((d: IDonation, index) => (
+									<tr key={d._id}>
+										<th>{index + 1}</th>
+										<td>{d.title}</td>
+										<td>{d.donation_category}</td>
+										<td>${d.money}</td>
+									</tr>
+								))}
+							</tbody>
+						</table>
+					) : (
+						<p>No Data found</p>
+					)}
+				</div>
 			</div>
-			{/* <div className="">
-				{data.length ? (
-					data.map((d: IDonation) => <p>{d.title}</p>)
-				) : (
-					
-				)}
-			</div> */}
-		</div>
+		</PrivateRoute>
 	);
 };
 
