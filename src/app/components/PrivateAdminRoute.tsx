@@ -25,9 +25,7 @@ const PrivateAdminRoute = ({ children }: { children: ReactNode }) => {
 
 	if (loading || adminLoading) {
 		return <p>Loading...</p>;
-	}
-
-	if (!admin) {
+	} else if (!admin || !user) {
 		redirect("/login");
 	}
 	return children;

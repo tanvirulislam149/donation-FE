@@ -4,6 +4,7 @@ import logo from "../../../assets/Logo.png";
 import Image from "next/image";
 import AuthButton from "./AuthButton/AuthButton";
 import { usePathname } from "next/navigation";
+import DashboardBtn from "../DashboardBtn/DashboardBtn";
 
 const Navbar = () => {
 	const pathname = usePathname();
@@ -46,11 +47,12 @@ const Navbar = () => {
 						<li className="py-2">
 							<Link href={"/statistics"}>Statistics</Link>
 						</li>
+						<DashboardBtn />
 						<AuthButton />
 					</ul>
 				</div>
 			</div>
-			<div className="navbar-end hidden lg:flex">
+			<div className="navbar-end w-full hidden lg:flex">
 				<ul className="menu menu-horizontal px-1 items-center">
 					<Link
 						className={`${
@@ -82,6 +84,7 @@ const Navbar = () => {
 					>
 						Statistics
 					</Link>
+					<DashboardBtn />
 					<AuthButton />
 				</ul>
 			</div>

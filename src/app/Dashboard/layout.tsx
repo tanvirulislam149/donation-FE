@@ -1,9 +1,10 @@
 import Link from "next/link";
 import React, { ReactNode } from "react";
+import PrivateAdminRoute from "../components/PrivateAdminRoute";
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
 	return (
-		<div>
+		<PrivateAdminRoute>
 			<div className="drawer lg:drawer-open">
 				<input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
 				<div className="drawer-content flex flex-col items-center justify-center">
@@ -47,7 +48,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 					</ul>
 				</div>
 			</div>
-		</div>
+		</PrivateAdminRoute>
 	);
 };
 
