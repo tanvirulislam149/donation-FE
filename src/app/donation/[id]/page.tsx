@@ -3,9 +3,12 @@ import PrivateRoute from "@/app/components/PrivateRoute";
 import React from "react";
 
 const getData = async ({ id }: { id: string }) => {
-	const res = await fetch(`http://localhost:5000/getDonation/${id}`, {
-		cache: "no-store",
-	});
+	const res = await fetch(
+		`https://donation-be.onrender.com/getDonation/${id}`,
+		{
+			cache: "no-store",
+		}
+	);
 	return res.json();
 };
 

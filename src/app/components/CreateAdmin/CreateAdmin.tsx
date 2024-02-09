@@ -7,7 +7,7 @@ const CreateAdmin = () => {
 	const [data, setData] = useState([]);
 
 	const getDonation = () => {
-		axios(`http://localhost:5000/getAllUser`)
+		axios(`https://donation-be.onrender.com/getAllUser`)
 			.then(function (response) {
 				setData(response.data);
 			})
@@ -20,12 +20,14 @@ const CreateAdmin = () => {
 	}, []);
 
 	const handleMakeAdmin = (id: string) => {
-		axios.patch(`http://localhost:5000/makeAdmin/${id}`).then((res) => {
-			if (res.data.acknowledged) {
-				getDonation();
-				toast.success("Admin making successful", { toastId: "makeAdmin" });
-			}
-		});
+		axios
+			.patch(`https://donation-be.onrender.com/makeAdmin/${id}`)
+			.then((res) => {
+				if (res.data.acknowledged) {
+					getDonation();
+					toast.success("Admin making successful", { toastId: "makeAdmin" });
+				}
+			});
 	};
 
 	return (

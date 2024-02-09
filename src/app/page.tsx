@@ -1,9 +1,7 @@
-import Banner from "./components/Banner/Banner";
-import CardContainer from "./components/CardContainer/CardContainer";
 import HomeContainer from "./components/HomeContainer";
 
 const getData = async () => {
-	const res = await fetch("http://localhost:5000/getAllDonation", {
+	const res = await fetch("https://donation-be.onrender.com/getAllDonation", {
 		cache: "no-store",
 	});
 	return res.json();

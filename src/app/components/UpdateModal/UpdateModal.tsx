@@ -20,7 +20,7 @@ const UpdateModal = ({
 	const [money, setMoney] = useState(data?.money);
 
 	useEffect(() => {
-		axios(`http://localhost:5000/getDonation/${id}`)
+		axios(`https://donation-be.onrender.com/getDonation/${id}`)
 			.then(function (response) {
 				setData(response.data);
 			})
@@ -41,7 +41,7 @@ const UpdateModal = ({
 		e.preventDefault();
 		const data = { title, donation_category, description, picture_url, money };
 		axios
-			.put(`http://localhost:5000/updateDonation/${id}`, data)
+			.put(`https://donation-be.onrender.com/updateDonation/${id}`, data)
 			.then(function (response) {
 				if (response.data.acknowledged) {
 					setData(null);

@@ -26,7 +26,7 @@ ChartJS.register(
 const AdminStatistics = () => {
 	const [barData, setBarData] = useState([]);
 	useEffect(() => {
-		axios(`http://localhost:5000/allDonationStat`)
+		axios(`https://donation-be.onrender.com/allDonationStat`)
 			.then(function (response) {
 				setBarData(response.data);
 			})

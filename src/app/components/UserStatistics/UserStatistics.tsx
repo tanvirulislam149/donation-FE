@@ -31,14 +31,14 @@ const UserStatistics = () => {
 	const [barData, setBarData] = useState([]);
 	useEffect(() => {
 		if (user) {
-			axios(`http://localhost:5000/myDonationRatio/${user?.email}`)
+			axios(`https://donation-be.onrender.com/myDonationRatio/${user?.email}`)
 				.then(function (response) {
 					setRatioData(response.data);
 				})
 				.catch(function (error) {
 					console.log(error);
 				});
-			axios(`http://localhost:5000/myDonations/${user?.email}`)
+			axios(`https://donation-be.onrender.com/myDonations/${user?.email}`)
 				.then(function (response) {
 					setBarData(response.data);
 				})

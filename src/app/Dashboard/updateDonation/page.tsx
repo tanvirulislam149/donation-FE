@@ -11,7 +11,7 @@ const UpdateDonation = () => {
 	const [data, setData] = useState([]);
 
 	const getDonation = () => {
-		axios(`http://localhost:5000/getAllDonation`)
+		axios(`https://donation-be.onrender.com/getAllDonation`)
 			.then(function (response) {
 				setData(response.data);
 			})

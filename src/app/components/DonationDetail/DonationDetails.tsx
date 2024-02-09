@@ -14,7 +14,7 @@ const DonationDetails = ({ data }: { data: IDonation }) => {
 		const { _id, ...rest } = data; // taking all key except _id
 		const finalData = { ...rest, email: user?.email };
 		axios
-			.post("http://localhost:5000/postDonation", finalData)
+			.post("https://donation-be.onrender.com/postDonation", finalData)
 			.then(function (response) {
 				if (response.data.acknowledged) {
 					toast.success("Donation Successful", { toastId: "success1" });

@@ -13,7 +13,7 @@ const PrivateAdminRoute = ({ children }: { children: ReactNode }) => {
 	useEffect(() => {
 		if (user) {
 			axios
-				.get(`http://localhost:5000/checkAdmin/${user?.email}`)
+				.get(`https://donation-be.onrender.com/checkAdmin/${user?.email}`)
 				.then((res) => {
 					if (res.data.role === "admin") {
 						setAdmin(true);

@@ -22,7 +22,7 @@ const Register = () => {
 		if (user) {
 			const data = { name, email: user?.user.email, role: "user" };
 			axios
-				.post("http://localhost:5000/postUser", data)
+				.post("https://donation-be.onrender.com/postUser", data)
 				.then((res) => console.log(res));
 			setErrorMsg("");
 			(document.getElementById("register") as HTMLFormElement).reset();

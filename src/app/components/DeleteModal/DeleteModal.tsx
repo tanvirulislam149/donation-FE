@@ -10,7 +10,7 @@ const DeleteModal = ({
 }) => {
 	const handleDelete = () => {
 		axios
-			.delete(`http://localhost:5000/deleteDonation/${id}`)
+			.delete(`https://donation-be.onrender.com/deleteDonation/${id}`)
 			.then(function (response) {
 				if (response.data.acknowledged) {
 					getDonation();

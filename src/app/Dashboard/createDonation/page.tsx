@@ -16,12 +16,14 @@ const CreateDonation = () => {
 			picture_url: picture_url.value,
 			money: money.value,
 		};
-		axios.post("http://localhost:5000/createDonation", data).then((res) => {
-			if (res.data.acknowledged) {
-				toast.success("Donation created successfully", { toastId: "create" });
-				(document.getElementById("createForm") as HTMLFormElement).reset();
-			}
-		});
+		axios
+			.post("https://donation-be.onrender.com/createDonation", data)
+			.then((res) => {
+				if (res.data.acknowledged) {
+					toast.success("Donation created successfully", { toastId: "create" });
+					(document.getElementById("createForm") as HTMLFormElement).reset();
+				}
+			});
 	};
 	return (
 		<div className="flex justify-center w-full">
