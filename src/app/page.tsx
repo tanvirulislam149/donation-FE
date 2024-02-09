@@ -1,11 +1,22 @@
 import Banner from "./components/Banner/Banner";
 import CardContainer from "./components/CardContainer/CardContainer";
+import HomeContainer from "./components/HomeContainer";
 
-export default function Home() {
+const getData = async () => {
+	const res = await fetch("http://localhost:5000/getAllDonation", {
+		cache: "no-store",
+	});
+	return res.json();
+};
+
+const Home = async () => {
+	const data = await getData();
+
 	return (
 		<main>
-			<Banner />
-			<CardContainer />
+			<HomeContainer data={data} />
 		</main>
 	);
-}
+};
+
+export default Home;
