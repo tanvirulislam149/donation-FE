@@ -59,7 +59,7 @@ const Navbar = () => {
 							pathname === "/"
 								? "text-red-500 font-bold border-b-2 border-red-500"
 								: ""
-						} px-3 mx-3`}
+						} mx-3`}
 						href={"/"}
 					>
 						Home
@@ -69,7 +69,7 @@ const Navbar = () => {
 							pathname === "/donation"
 								? "text-red-500 font-bold border-b-2 border-red-500"
 								: ""
-						} px-3 mx-3`}
+						} mx-3`}
 						href={"/donation"}
 					>
 						Donations
@@ -79,7 +79,7 @@ const Navbar = () => {
 							pathname === "/statistics"
 								? "text-red-500 font-bold border-b-2 border-red-500"
 								: ""
-						} px-3 mx-3`}
+						} mx-3`}
 						href={"/statistics"}
 					>
 						Statistics

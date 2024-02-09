@@ -12,7 +12,7 @@ const AuthButton = () => {
 			{user ? (
 				<button
 					onClick={() => signOut()}
-					className="btn btn-primary m-3 md:m-3"
+					className="btn btn-primary m-3 md:m-0"
 				>
 					Log out
 				</button>
