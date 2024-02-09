@@ -4,10 +4,12 @@ import auth from "../../../../firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import axios from "axios";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const DashboardBtn = () => {
 	const [user, loading] = useAuthState(auth);
 	const [admin, setAdmin] = useState(false);
+	const pathname = usePathname();
 
 	useEffect(() => {
 		if (user) {
@@ -23,15 +25,24 @@ const DashboardBtn = () => {
 		}
 	}, [user]);
 	return (
-		<div>
+		<>
 			{admin ? (
-				<li className="px-0 py-2 lg:py-0">
-					<Link href={"/Dashboard/createDonation"}>Dashboard</Link>
-				</li>
+				// <li className="px-0 py-2 lg:py-0">
+				<Link
+					className={`${
+						pathname.split("/")[1] === "Dashboard"
+							? "text-red-500 font-bold border-b-2 border-red-500"
+							: ""
+					} lg:mx-3`}
+					href={"/Dashboard/createDonation"}
+				>
+					Dashboard
+				</Link>
 			) : (
+				// </li>
 				""
 			)}
-		</div>
+		</>
 	);
 };
 

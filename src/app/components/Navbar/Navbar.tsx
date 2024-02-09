@@ -39,15 +39,44 @@ const Navbar = () => {
 						className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-40"
 					>
 						<li className="py-2">
-							<Link href={"/"}>Home</Link>
+							<Link
+								className={`${
+									pathname === "/"
+										? "text-red-500 font-bold border-b-2 border-red-500"
+										: ""
+								}`}
+								href={"/"}
+							>
+								Home
+							</Link>
 						</li>
 						<li className="py-2">
-							<Link href={"/donation"}>Donations</Link>
+							<Link
+								className={`${
+									pathname === "/donation"
+										? "text-red-500 font-bold border-b-2 border-red-500"
+										: ""
+								}`}
+								href={"/donation"}
+							>
+								Donations
+							</Link>
 						</li>
 						<li className="py-2">
-							<Link href={"/statistics"}>Statistics</Link>
+							<Link
+								className={`${
+									pathname === "/statistics"
+										? "text-red-500 font-bold border-b-2 border-red-500"
+										: ""
+								}`}
+								href={"/statistics"}
+							>
+								Statistics
+							</Link>
 						</li>
-						<DashboardBtn />
+						<li className="py-2">
+							<DashboardBtn />
+						</li>
 						<AuthButton />
 					</ul>
 				</div>
