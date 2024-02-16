@@ -15,7 +15,7 @@ const DonationCard = ({ data }: { data: IDonation }) => {
 			>
 				<figure>
 					<Image
-						className="w-64 h-full"
+						className="md:w-64 w-48 h-64"
 						src={data.picture_url}
 						alt="Picture of the author"
 						width={500}
@@ -26,7 +26,7 @@ const DonationCard = ({ data }: { data: IDonation }) => {
 					<p>
 						<span
 							style={{ backgroundColor: categoryBg, color: textColor }}
-							className="font-bold p-2 text-sm"
+							className="font-bold md:p-2 text-sm"
 						>
 							{data.donation_category}
 						</span>

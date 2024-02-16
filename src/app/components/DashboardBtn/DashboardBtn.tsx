@@ -27,7 +27,6 @@ const DashboardBtn = () => {
 	return (
 		<>
 			{admin ? (
-				// <li className="px-0 py-2 lg:py-0">
 				<Link
 					className={`${
 						pathname.split("/")[1] === "Dashboard"
@@ -39,8 +38,7 @@ const DashboardBtn = () => {
 					Dashboard
 				</Link>
 			) : (
-				// </li>
-				""
+				<li className="hidden"></li>
 			)}
 		</>
 	);
