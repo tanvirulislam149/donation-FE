@@ -12,13 +12,15 @@ const AuthButton = () => {
 			{user ? (
 				<button
 					onClick={() => signOut()}
-					className="btn btn-primary my-3 md:m-0"
+					className="btn btn-primary my-3 text-base md:m-0"
 				>
 					Log out
 				</button>
 			) : (
 				<Link href={"/login"}>
-					<button className="btn btn-primary my-3 md:m-0">Login</button>
+					<button className="btn btn-primary my-3 text-base md:m-0">
+						Login
+					</button>
 				</Link>
 			)}
 		</div>

@@ -16,9 +16,9 @@ const Navbar = () => {
 				</Link>
 			</div>
 			{/* mobile view */}
-			<div className="navbar-end">
+			<div className="navbar-end lg:hidden">
 				<div className="dropdown dropdown-end">
-					<div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+					<div tabIndex={0} role="button" className="btn btn-ghost">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							className="h-5 w-5"
@@ -38,7 +38,6 @@ const Navbar = () => {
 						tabIndex={0}
 						className="menu menu-sm dropdown-content mt-3 z-[1] p-5 shadow-xl bg-base-100 rounded-box w-40 text-base"
 					>
-						{/* <li className="py-2"> */}
 						<Link
 							className={`${
 								pathname === "/"
@@ -49,8 +48,6 @@ const Navbar = () => {
 						>
 							Home
 						</Link>
-						{/* </li> */}
-						{/* <li className="py-2"> */}
 						<Link
 							className={`${
 								pathname === "/donation"
@@ -61,8 +58,6 @@ const Navbar = () => {
 						>
 							Donations
 						</Link>
-						{/* </li> */}
-						{/* <li className="py-2"> */}
 						<Link
 							className={`${
 								pathname === "/statistics"
@@ -73,20 +68,19 @@ const Navbar = () => {
 						>
 							Statistics
 						</Link>
-						{/* </li> */}
 						<DashboardBtn />
 						<AuthButton />
 					</ul>
 				</div>
 			</div>
-			<div className="navbar-end w-full hidden lg:flex">
-				<ul className="menu menu-horizontal px-1 items-center">
+			<div className="navbar-center hidden lg:flex">
+				<ul className="menu menu-horizontal px-1 items-center text-base">
 					<Link
 						className={`${
 							pathname === "/"
 								? "text-red-500 font-bold border-b-2 border-red-500"
 								: ""
-						} mx-3`}
+						} mx-5`}
 						href={"/"}
 					>
 						Home
@@ -96,7 +90,7 @@ const Navbar = () => {
 							pathname === "/donation"
 								? "text-red-500 font-bold border-b-2 border-red-500"
 								: ""
-						} mx-3`}
+						} mx-5`}
 						href={"/donation"}
 					>
 						Donations
@@ -106,14 +100,16 @@ const Navbar = () => {
 							pathname === "/statistics"
 								? "text-red-500 font-bold border-b-2 border-red-500"
 								: ""
-						} mx-3`}
+						} mx-5`}
 						href={"/statistics"}
 					>
 						Statistics
 					</Link>
 					<DashboardBtn />
-					<AuthButton />
 				</ul>
+			</div>
+			<div className="navbar-end hidden lg:flex">
+				<AuthButton />
 			</div>
 		</div>
 	);
