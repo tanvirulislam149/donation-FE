@@ -74,9 +74,7 @@ const Navbar = () => {
 								Statistics
 							</Link>
 						</li>
-						<li className="py-2">
-							<DashboardBtn />
-						</li>
+						<DashboardBtn />
 						<AuthButton />
 					</ul>
 				</div>
