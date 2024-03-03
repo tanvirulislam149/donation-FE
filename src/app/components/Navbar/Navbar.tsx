@@ -36,44 +36,44 @@ const Navbar = () => {
 					</div>
 					<ul
 						tabIndex={0}
-						className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-40"
+						className="menu menu-sm dropdown-content mt-3 z-[1] p-5 shadow-xl bg-base-100 rounded-box w-40 text-base"
 					>
-						<li className="py-2">
-							<Link
-								className={`${
-									pathname === "/"
-										? "text-red-500 font-bold border-b-2 border-red-500"
-										: ""
-								}`}
-								href={"/"}
-							>
-								Home
-							</Link>
-						</li>
-						<li className="py-2">
-							<Link
-								className={`${
-									pathname === "/donation"
-										? "text-red-500 font-bold border-b-2 border-red-500"
-										: ""
-								}`}
-								href={"/donation"}
-							>
-								Donations
-							</Link>
-						</li>
-						<li className="py-2">
-							<Link
-								className={`${
-									pathname === "/statistics"
-										? "text-red-500 font-bold border-b-2 border-red-500"
-										: ""
-								}`}
-								href={"/statistics"}
-							>
-								Statistics
-							</Link>
-						</li>
+						{/* <li className="py-2"> */}
+						<Link
+							className={`${
+								pathname === "/"
+									? "text-red-500 font-bold border-b-2 border-red-500"
+									: ""
+							} my-2`}
+							href={"/"}
+						>
+							Home
+						</Link>
+						{/* </li> */}
+						{/* <li className="py-2"> */}
+						<Link
+							className={`${
+								pathname === "/donation"
+									? "text-red-500 font-bold border-b-2 border-red-500"
+									: ""
+							} my-2`}
+							href={"/donation"}
+						>
+							Donations
+						</Link>
+						{/* </li> */}
+						{/* <li className="py-2"> */}
+						<Link
+							className={`${
+								pathname === "/statistics"
+									? "text-red-500 font-bold border-b-2 border-red-500"
+									: ""
+							} my-2`}
+							href={"/statistics"}
+						>
+							Statistics
+						</Link>
+						{/* </li> */}
 						<DashboardBtn />
 						<AuthButton />
 					</ul>
