@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 
 const DonationDetails = ({ data }: { data: IDonation }) => {
 	const [user, loading] = useAuthState(auth);
+	console.log(data);
 
 	const handleDonate = () => {
 		const { _id, ...rest } = data; // taking all key except _id
