@@ -18,7 +18,7 @@ const Navbar = () => {
 			{/* mobile view */}
 			<div className="navbar-end lg:hidden">
 				<div className="dropdown dropdown-end">
-					<div tabIndex={0} role="button" className="btn btn-ghost">
+					<div tabIndex={0} role="button" className="btn btn-ghost text-black">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							className="h-5 w-5"
@@ -41,7 +41,7 @@ const Navbar = () => {
 						<Link
 							className={`${
 								pathname === "/"
-									? "text-green-500 border-b-2 border-green-500"
+									? "text-green-500 border-b-2 pb-2 border-green-500"
 									: ""
 							} my-2`}
 							href={"/"}
@@ -51,7 +51,7 @@ const Navbar = () => {
 						<Link
 							className={`${
 								pathname === "/donation"
-									? "text-green-500 border-b-2 border-green-500"
+									? "text-green-500 border-b-2 pb-2 border-green-500"
 									: ""
 							} my-2`}
 							href={"/donation"}
@@ -61,7 +61,7 @@ const Navbar = () => {
 						<Link
 							className={`${
 								pathname === "/statistics"
-									? "text-green-500 border-b-2 border-green-500"
+									? "text-green-500 border-b-2 pb-2 border-green-500"
 									: ""
 							} my-2`}
 							href={"/statistics"}
