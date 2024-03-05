@@ -30,7 +30,7 @@ const DashboardBtn = () => {
 				<Link
 					className={`${
 						pathname.split("/")[1] === "Dashboard"
-							? "text-red-500 font-bold border-b-2 border-red-500"
+							? "text-green-500 font-bold pb-1 border-b-2 border-green-500"
 							: ""
 					} my-2 md:ml-5 md:mr-6`}
 					href={"/Dashboard/createDonation"}

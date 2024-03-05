@@ -9,7 +9,7 @@ import DashboardBtn from "../DashboardBtn/DashboardBtn";
 const Navbar = () => {
 	const pathname = usePathname();
 	return (
-		<div className="navbar bg-base-100 md:px-10 py-3 sticky top-0 z-10">
+		<div className="navbar bg-base-100 md:px-10 py-3 sticky top-0 z-10 text-gray-300 font-extrabold">
 			<div className="navbar-start">
 				<Link href={"/"}>
 					<Image src={logo} width={200} height={200} alt="logo" />
@@ -41,7 +41,7 @@ const Navbar = () => {
 						<Link
 							className={`${
 								pathname === "/"
-									? "text-red-500 font-bold border-b-2 border-red-500"
+									? "text-green-500 border-b-2 border-green-500"
 									: ""
 							} my-2`}
 							href={"/"}
@@ -51,7 +51,7 @@ const Navbar = () => {
 						<Link
 							className={`${
 								pathname === "/donation"
-									? "text-red-500 font-bold border-b-2 border-red-500"
+									? "text-green-500 border-b-2 border-green-500"
 									: ""
 							} my-2`}
 							href={"/donation"}
@@ -61,7 +61,7 @@ const Navbar = () => {
 						<Link
 							className={`${
 								pathname === "/statistics"
-									? "text-red-500 font-bold border-b-2 border-red-500"
+									? "text-green-500 border-b-2 border-green-500"
 									: ""
 							} my-2`}
 							href={"/statistics"}
@@ -78,9 +78,9 @@ const Navbar = () => {
 					<Link
 						className={`${
 							pathname === "/"
-								? "text-red-500 font-bold border-b-2 border-red-500"
+								? "text-green-500 border-b-2 pb-2 border-green-500"
 								: ""
-						} mx-5`}
+						} mx-5 hover:text-green-500`}
 						href={"/"}
 					>
 						Home
@@ -88,9 +88,9 @@ const Navbar = () => {
 					<Link
 						className={`${
 							pathname === "/donation"
-								? "text-red-500 font-bold border-b-2 border-red-500"
+								? "text-green-500 border-b-2 pb-2 border-green-500"
 								: ""
-						} mx-5`}
+						} mx-5 hover:text-green-500`}
 						href={"/donation"}
 					>
 						Donations
@@ -98,9 +98,9 @@ const Navbar = () => {
 					<Link
 						className={`${
 							pathname === "/statistics"
-								? "text-red-500 font-bold border-b-2 border-red-500"
+								? "text-green-500 border-b-2 pb-2 border-green-500"
 								: ""
-						} mx-5`}
+						} mx-5 hover:text-green-500`}
 						href={"/statistics"}
 					>
 						Statistics
