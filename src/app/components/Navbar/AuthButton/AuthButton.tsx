@@ -12,13 +12,13 @@ const AuthButton = () => {
 			{user ? (
 				<button
 					onClick={() => signOut()}
-					className="btn btn-primary my-3 rounded-none bg-green-400 border-none text-white text-base font-bold hover:bg-green-700 md:m-0"
+					className="btn btn-primary my-3 rounded-none bg-green-400 border-none text-black text-base font-bold hover:bg-green-700 md:m-0"
 				>
 					Log out
 				</button>
 			) : (
 				<Link href={"/login"}>
-					<button className="btn btn-primary my-3 bg-green-400 border-none text-white text-base font-bold hover:bg-green-700 md:m-0 rounded-none">
+					<button className="btn btn-primary my-3 bg-green-400 border-none text-black text-base font-bold hover:bg-green-700 md:m-0 rounded-none">
 						Login
 					</button>
 				</Link>

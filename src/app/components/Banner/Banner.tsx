@@ -1,4 +1,14 @@
 import { Dispatch, SetStateAction } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+// import required modules
+import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import styles from "./Banner.module.css";
 
 const Banner = ({
@@ -9,22 +19,34 @@ const Banner = ({
 	setSearch: Dispatch<SetStateAction<string>>;
 }) => {
 	return (
-		<div className={`h-screen flex justify-center pt-48 ${styles.bannerImg}`}>
-			<div className="mx-5">
-				<p className="text-center text-5xl font-bold mb-5">
-					I Grow By Helping People In Need
-				</p>
-				<div className={`flex justify-center`}>
-					<input
-						type="text"
-						placeholder="Search by category"
-						className="input input-bordered md:w-80 w-full"
-						onChange={(e) => setSearch(e.target.value)}
-						value={search}
+		<div className={`h-screen flex justify-center`}>
+			<Swiper
+				spaceBetween={30}
+				effect={"fade"}
+				loop={true}
+				autoplay={{
+					delay: 4000,
+					disableOnInteraction: false,
+				}}
+				pagination={{
+					clickable: true,
+				}}
+				modules={[EffectFade, Navigation, Pagination, Autoplay]}
+				className="mySwiper"
+			>
+				<SwiperSlide className={styles.bannerImg}>
+					<img
+						className={`w-full`}
+						src="https://i.ibb.co/WWdyyps/larm-rmah-AEa-TUnvneik-unsplash.jpg"
 					/>
-					{/* <button className="btn btn-error">Search</button> */}
-				</div>
-			</div>
+				</SwiperSlide>
+				<SwiperSlide className={styles.bannerImg}>
+					<img
+						className={`w-full`}
+						src="https://i.ibb.co/G9CCsz0/un0381303.jpg"
+					/>
+				</SwiperSlide>
+			</Swiper>
 		</div>
 	);
 };

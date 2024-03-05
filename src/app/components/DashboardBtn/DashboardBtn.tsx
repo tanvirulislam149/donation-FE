@@ -32,7 +32,7 @@ const DashboardBtn = () => {
 						pathname.split("/")[1] === "Dashboard"
 							? "text-green-500 font-bold pb-2 border-b-2 border-green-500"
 							: ""
-					} my-2 md:my-0 md:ml-5 md:mr-6`}
+					} my-2 md:my-0 md:ml-5 md:mr-6 hover:text-green-500`}
 					href={"/Dashboard/createDonation"}
 				>
 					Dashboard

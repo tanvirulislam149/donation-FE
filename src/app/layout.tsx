@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar/Navbar";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "swiper/css";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
