@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import { CSSProperties, Dispatch, SetStateAction } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -18,6 +18,18 @@ const Banner = ({
 	search: string;
 	setSearch: Dispatch<SetStateAction<string>>;
 }) => {
+	const pagination = {
+		clickable: true,
+		renderBullet: function (index: number, className: string) {
+			return (
+				'<span class="' +
+				className +
+				'">' +
+				`<span class='circle'></span>` +
+				"</span>"
+			);
+		},
+	};
 	return (
 		<div className={`h-screen flex justify-center`}>
 			<Swiper
@@ -28,9 +40,7 @@ const Banner = ({
 					delay: 4000,
 					disableOnInteraction: false,
 				}}
-				pagination={{
-					clickable: true,
-				}}
+				pagination={pagination}
 				modules={[EffectFade, Navigation, Pagination, Autoplay]}
 				className="mySwiper"
 			>

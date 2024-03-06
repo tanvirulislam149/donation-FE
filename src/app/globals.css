@@ -10,9 +10,21 @@
 	font-size: 12px !important;
 	color: #000 !important;
 	opacity: 1 !important;
-	background: rgba(255, 255, 255, 0.3) !important;
+	background: rgba(255, 255, 255, 0.4) !important;
 }
 
 .swiper-pagination-bullet-active {
-	background: white !important;
+	background: transparent !important;
+	border: 2px solid white !important;
+	position: relative !important;
+}
+
+.swiper-pagination-bullet-active > .circle {
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	position: absolute;
+	top: 20%;
+	left: 22%;
+	background-color: white !important;
 }
