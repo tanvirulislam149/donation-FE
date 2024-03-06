@@ -80,6 +80,19 @@ const Banner = ({
 					</div>
 				</SwiperSlide>
 			</Swiper>
+			<div className="flex text-3xl">
+				<div className="w-full h-80 px-5 flex items-center text-white bg-green-400">
+					<p>
+						We’ve been tackling poverty in communities to build better lives
+					</p>
+				</div>
+				<div className="w-full h-80 px-5 flex items-center text-white bg-slate-800">
+					<p>The great journey to end poverty for good begins with a child.</p>
+				</div>
+				<div className="w-full h-80 px-5 flex items-center text-white bg-green-400">
+					<p>Join our community to help bring clean and safe drinking water</p>
+				</div>
+			</div>
 		</div>
 	);
 };
