@@ -1,16 +1,11 @@
-import HomeContainer from "./components/HomeContainer";
+import Banner from "./components/Banner/Banner";
+import CardContainer from "./components/CardContainer/CardContainer";
 
-const getData = async () => {
-	const res = await fetch("https://donation-be.onrender.com/getAllDonation");
-	return res.json();
-};
-
-const Home = async () => {
-	const data = await getData();
-
+const Home = () => {
 	return (
 		<main>
-			<HomeContainer data={data} />
+			<Banner />
+			<CardContainer />
 		</main>
 	);
 };

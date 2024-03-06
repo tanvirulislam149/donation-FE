@@ -14,10 +14,7 @@ const Card = ({ data }: { data: IDonation }) => {
 			className="cursor-pointer"
 			onClick={() => router.push(`/donation/${data._id}`)}
 		>
-			<div
-				style={{ backgroundColor: cardBg }}
-				className="card sm:w-96 h-full bg-base-100 shadow-xl"
-			>
+			<div className="card w-full h-full bg-green-100 shadow-xl rounded-none">
 				<figure>
 					<Image
 						className="w-96 h-56"
@@ -29,10 +26,7 @@ const Card = ({ data }: { data: IDonation }) => {
 				</figure>
 				<div className="card-body">
 					<p>
-						<span
-							style={{ backgroundColor: categoryBg, color: textColor }}
-							className="p-2 text-sm font-bold"
-						>
+						<span className="p-2 text-sm font-bold bg-green-300 text-green-700">
 							{data.donation_category}
 						</span>
 					</p>

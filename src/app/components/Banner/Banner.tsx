@@ -1,4 +1,4 @@
-import { CSSProperties, Dispatch, SetStateAction } from "react";
+"use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -11,13 +11,7 @@ import "swiper/css/pagination";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import styles from "./Banner.module.css";
 
-const Banner = ({
-	search,
-	setSearch,
-}: {
-	search: string;
-	setSearch: Dispatch<SetStateAction<string>>;
-}) => {
+const Banner = () => {
 	const pagination = {
 		clickable: true,
 		renderBullet: function (index: number, className: string) {

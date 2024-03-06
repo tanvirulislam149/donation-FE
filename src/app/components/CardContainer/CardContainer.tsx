@@ -2,29 +2,40 @@ import React from "react";
 import Card from "../Card/Card";
 import { IDonation } from "@/types/globalTypes";
 
-const CardContainer = ({
-	data,
-	search,
-}: {
-	data: IDonation[];
-	search: string;
-}) => {
-	let filteredData = data;
+const getData = async () => {
+	const res = await fetch("https://donation-be.onrender.com/getAllDonation", {
+		cache: "no-store",
+	});
+	return res.json();
+};
 
-	if (search) {
-		filteredData = filteredData!.filter((item) =>
-			item.donation_category?.toLowerCase().includes(search.toLowerCase())
-		);
+const CardContainer = async () => {
+	let data = await getData();
+
+	if (!data) {
+		data = await getData();
 	}
 
 	return (
-		<div className="flex justify-center">
-			<div className="my-20 grid xl:grid-cols-3 md:grid-cols-2 gap-10">
-				{filteredData.map((d: IDonation) => (
-					<Card key={d._id} data={d} />
-				))}
+		<>
+			<div className="font-bold text-5xl mt-24 text-green-500 flex justify-center">
+				<div>
+					<p>Categories</p>
+					<hr className="h-2 bg-green-500 w-14 mt-2" />
+				</div>
 			</div>
-		</div>
+			<div className="flex justify-center">
+				{data ? (
+					<div className="my-8 grid xl:grid-cols-4 md:grid-cols-2 gap-y-10">
+						{data.map((d: IDonation) => (
+							<Card key={d._id} data={d} />
+						))}
+					</div>
+				) : (
+					<span className="loading loading-spinner loading-lg bg-green-500 my-20"></span>
+				)}
+			</div>
+		</>
 	);
 };
 
