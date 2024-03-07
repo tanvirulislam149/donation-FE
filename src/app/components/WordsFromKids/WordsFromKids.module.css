@@ -7,8 +7,12 @@
 	top: 0;
 	left: 0;
 }
-/* .quoteImg {
-	position: absolute;
-	top: 0;
-	left: 10%;
-} */
+
+@media only screen and (max-width: 600px) {
+	.quoteImgCont > img {
+		width: 150px;
+	}
+	.quoteImgCont {
+		height: 500px;
+	}
+}

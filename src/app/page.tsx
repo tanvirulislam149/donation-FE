@@ -10,8 +10,8 @@ const Home = () => {
 			<Banner />
 			<CardContainer />
 			<HowWeWork />
-			{/* <WordsFromKids />
-			<Footer /> */}
+			<WordsFromKids />
+			<Footer />
 		</main>
 	);
 };
