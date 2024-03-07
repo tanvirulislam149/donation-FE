@@ -6,7 +6,7 @@ import quote from "../../../assets/quote.png";
 
 const WordsFromKids = () => {
 	return (
-		<div className="flex my-20">
+		<div className="flex mt-20">
 			<div className="w-1/2">
 				<Image
 					className="w-full"
