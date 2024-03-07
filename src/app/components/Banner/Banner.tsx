@@ -40,16 +40,17 @@ const Banner = () => {
 			>
 				<SwiperSlide className={styles.bannerImg}>
 					<img
-						className={`w-full`}
+						className={`w-full h-full`}
 						src="https://i.ibb.co/WWdyyps/larm-rmah-AEa-TUnvneik-unsplash.jpg"
 					/>
 					<div className={styles.bannerText}>
 						<p>
 							Home is <span className="text-green-400">Life</span>
 						</p>
-						<div className="text-white text-3xl font-normal mt-8">
-							<p>We build strength, stability and self reliance</p>
-							<p>through shelter</p>
+						<div className="text-white md:text-3xl sm:text-2xl text-xl font-normal md:mt-8 mt-3">
+							<p className="w-3/4">
+								We build strength, stability and self reliance through shelter
+							</p>
 						</div>
 						<button className="btn btn-primary my-3 rounded-none bg-green-400 border-none text-black text-base font-bold hover:bg-green-700 md:m-0">
 							Donate
@@ -58,15 +59,16 @@ const Banner = () => {
 				</SwiperSlide>
 				<SwiperSlide className={styles.bannerImg}>
 					<img
-						className={`w-full`}
+						className={`w-full  h-full`}
 						src="https://i.ibb.co/G9CCsz0/un0381303.jpg"
 					/>
 					<div className={styles.bannerText}>
 						<p className={styles.firstText}>Children Needs</p>
 						<p className="text-green-400">Your Help</p>
-						<div className="text-white text-3xl font-normal mt-12">
-							<p>We build strength, stability and self reliance</p>
-							<p>through shelter</p>
+						<div className="text-white md:text-3xl sm:text-2xl text-xl  font-normal md:mt-12 mt-4">
+							<p className="w-3/4">
+								We build strength, stability and self reliance through shelter
+							</p>
 						</div>
 						<button className="btn btn-primary my-3 rounded-none bg-green-400 border-none text-black text-base font-bold hover:bg-green-700 md:m-0">
 							Donate
@@ -74,7 +76,7 @@ const Banner = () => {
 					</div>
 				</SwiperSlide>
 			</Swiper>
-			<div className="flex text-3xl">
+			<div className="md:flex text-3xl">
 				<div className="w-full h-80 px-5 flex items-center text-white bg-green-400">
 					<p>
 						We’ve been tackling poverty in communities to build better lives

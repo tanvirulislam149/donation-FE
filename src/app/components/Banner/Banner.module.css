@@ -28,3 +28,30 @@
 	font-size: 60px;
 	font-weight: 400;
 }
+
+@media only screen and (max-width: 800px) {
+	.bannerImg {
+		height: 50vh;
+	}
+	.bannerText {
+		font-size: 45px;
+		top: 10%;
+		left: 5%;
+	}
+	.firstText {
+		font-size: 30px;
+	}
+}
+@media only screen and (max-width: 576px) {
+	.bannerImg {
+		height: 40vh;
+	}
+	.bannerText {
+		font-size: 35px;
+		top: 10%;
+		left: 5%;
+	}
+	.firstText {
+		font-size: 20px;
+	}
+}
