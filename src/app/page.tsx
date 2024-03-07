@@ -9,8 +9,8 @@ const Home = () => {
 		<main>
 			<Banner />
 			<CardContainer />
-			{/* <HowWeWork />
-			<WordsFromKids />
+			<HowWeWork />
+			{/* <WordsFromKids />
 			<Footer /> */}
 		</main>
 	);

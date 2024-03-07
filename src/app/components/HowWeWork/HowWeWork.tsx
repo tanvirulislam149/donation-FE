@@ -7,11 +7,17 @@ import icon3 from "../../../assets/icon_3.png";
 
 const HowWeWork = () => {
 	return (
-		<div className="flex justify-evenly my-28">
-			<div>
-				<Image alt="child" src={img} height={500} width={500} />
+		<div className="md:flex justify-evenly my-28">
+			<div className="flex justify-center">
+				<Image
+					className="w-5/6"
+					alt="child"
+					src={img}
+					height={500}
+					width={500}
+				/>
 			</div>
-			<div className="w-1/2">
+			<div className="w-full md:w-1/2 px-4 md:px-0">
 				<div className="font-bold text-5xl mt-4 text-black">
 					<p>How We Work</p>
 					<hr className="h-2 bg-green-500 w-14 mt-2" />
