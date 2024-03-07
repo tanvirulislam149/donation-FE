@@ -14,10 +14,10 @@ const Card = ({ data }: { data: IDonation }) => {
 			className="cursor-pointer"
 			onClick={() => router.push(`/donation/${data._id}`)}
 		>
-			<div className="card w-full h-full bg-green-100 shadow-xl rounded-none">
+			<div className="card w-full h-full bg-green-100 hover:bg-green-200 hover:-translate-y-2 shadow-xl rounded-none">
 				<figure>
 					<Image
-						className="w-96 h-56"
+						className="w-full h-56"
 						src={data.picture_url}
 						alt="Picture of the author"
 						width={500}
