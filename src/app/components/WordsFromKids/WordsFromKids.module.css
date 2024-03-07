@@ -1,0 +1,14 @@
+.quoteImgCont {
+	position: relative;
+}
+
+.quoteImgCont > div {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+/* .quoteImg {
+	position: absolute;
+	top: 0;
+	left: 10%;
+} */

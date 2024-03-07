@@ -12,10 +12,6 @@ const getData = async () => {
 const CardContainer = async () => {
 	let data = await getData();
 
-	if (!data) {
-		data = await getData();
-	}
-
 	return (
 		<>
 			<div className="font-bold text-5xl mt-24 text-green-500 flex justify-center">
@@ -25,15 +21,11 @@ const CardContainer = async () => {
 				</div>
 			</div>
 			<div className="flex justify-center">
-				{data ? (
-					<div className="my-8 grid xl:grid-cols-4 md:grid-cols-2 gap-y-10">
-						{data.map((d: IDonation) => (
-							<Card key={d._id} data={d} />
-						))}
-					</div>
-				) : (
-					<span className="loading loading-spinner loading-lg bg-green-500 my-20"></span>
-				)}
+				<div className="my-8 grid xl:grid-cols-4 md:grid-cols-2 gap-y-10">
+					{data.map((d: IDonation) => (
+						<Card key={d._id} data={d} />
+					))}
+				</div>
 			</div>
 		</>
 	);
