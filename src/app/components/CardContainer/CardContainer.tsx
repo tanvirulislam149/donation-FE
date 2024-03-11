@@ -4,7 +4,7 @@ import { IDonation } from "@/types/globalTypes";
 
 const getData = async () => {
 	const res = await fetch("https://donation-be.onrender.com/getAllDonation", {
-		cache: "no-store",
+		next: { revalidate: 300 },
 	});
 	return res.json();
 };
