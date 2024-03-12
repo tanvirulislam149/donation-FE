@@ -26,10 +26,10 @@ const DonationDetails = ({ data }: { data: IDonation }) => {
 			});
 	};
 	return (
-		<div className="flex justify-center my-4">
+		<div className="flex justify-center my-4 mx-14">
 			<div className="card bg-base-100 mx-10">
 				<div className="md:flex">
-					<figure className="md:w-1/2">
+					<figure className="md:w-4/6 md:mx-10">
 						<Image
 							className=""
 							src={data.picture_url}
@@ -40,11 +40,11 @@ const DonationDetails = ({ data }: { data: IDonation }) => {
 							style={{ width: "100%", height: "auto" }} // optional
 						/>
 					</figure>
-					<div className="card-body md:w-1/2">
+					<div className="card-body md:w-2/6">
 						<div>
-							<h2 className="card-title text-3xl my-3">{data.title}</h2>
-							<p>{data.description}</p>
-							<div className="flex my-3">
+							<h2 className="card-title text-3xl my-5">{data.title}</h2>
+							<p className="my-5 text-justify">{data.description}</p>
+							<div className="flex my-5">
 								<a>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +81,7 @@ const DonationDetails = ({ data }: { data: IDonation }) => {
 							</div>
 							<button
 								onClick={handleDonate}
-								className="btn btn-primary my-3 rounded-none bg-green-400 border-none text-black text-base font-bold hover:bg-green-700 md:m-0"
+								className="btn btn-primary my-5 rounded-none bg-green-400 border-none text-black text-base font-bold hover:bg-green-700 md:m-0"
 							>
 								Donate ${data.money}
 							</button>
