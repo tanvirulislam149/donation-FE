@@ -6,6 +6,8 @@ import auth from "../../../../firebase.init";
 import { IDonation } from "@/types/globalTypes";
 import axios from "axios";
 import { toast } from "react-toastify";
+import styles from "./DonationDetails.module.css";
+import img from "../../../assets/kid.jpg";
 
 const DonationDetails = ({ data }: { data: IDonation }) => {
 	const [user, loading] = useAuthState(auth);
@@ -91,7 +93,7 @@ const DonationDetails = ({ data }: { data: IDonation }) => {
 					</div>
 				</div>
 				<div className="md:flex my-16">
-					<div>
+					<div className="md:w-4/6">
 						<p className="text-3xl font-bold text-black mb-4">
 							How did this come to our attention?
 						</p>
@@ -102,14 +104,24 @@ const DonationDetails = ({ data }: { data: IDonation }) => {
 							Shaftesbury in the United Kingdom in 1830, aimed to improve
 							working-class conditions. It promoted, for example, the allotment
 							of land to labourers for “cottage husbandry” that later became the
-							allotment movement. In 1844 it became the first Model Dwellings
-							Company. There was strong growth in municipal charities. The
-							Brougham Commission led on to the Municipal Corporations Act 1835,
-							which reorganized multiple local charities by incorporating them
-							into single entities under supervision from local government.
+							allotment movement. <br /> <br /> In 1844 it became the first
+							Model Dwellings Company. There was strong growth in municipal
+							charities. The Brougham Commission led on to the Municipal
+							Corporations Act 1835, which reorganized multiple local charities
+							by incorporating them into single entities under supervision from
+							local government.
 						</p>
 					</div>
-					<div></div>
+					<div className={`md:w-2/6 md:ml-10 ${styles.bgImage}`}>
+						<Image src={img} alt="kid" width={500} height={500} />
+						<div className="absolute top-0 text-white mx-5">
+							<p className="text-3xl m-3 font-bold">Want to donate by phone?</p>
+							<p className="text-xl my-2 mx-3">Call us now:</p>
+							<p className="text-3xl mx-3 font-bold">0123-456-789</p>
+							<p className="text-xl my-2 mx-3">Or email us:</p>
+							<p className="text-3xl mx-3 font-bold">donate@example.com</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
