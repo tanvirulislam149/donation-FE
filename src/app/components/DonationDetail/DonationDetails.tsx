@@ -26,7 +26,7 @@ const DonationDetails = ({ data }: { data: IDonation }) => {
 			});
 	};
 	return (
-		<div className="flex justify-center my-4 mx-14">
+		<div className="flex justify-center my-4 md:mx-14">
 			<div className="card bg-base-100 mx-10">
 				<div className="md:flex">
 					<figure className="md:w-4/6 md:mx-10">
