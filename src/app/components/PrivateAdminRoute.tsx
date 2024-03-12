@@ -4,6 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import { ReactNode, useEffect, useState } from "react";
 import axios from "axios";
+import Loading from "./Loading/Loading";
 
 const PrivateAdminRoute = ({ children }: { children: ReactNode }) => {
 	const [user, loading] = useAuthState(auth);
@@ -24,7 +25,7 @@ const PrivateAdminRoute = ({ children }: { children: ReactNode }) => {
 	}, [user]);
 
 	if (loading || adminLoading) {
-		return <p>Loading...</p>;
+		return <Loading />;
 	} else if (!admin || !user) {
 		redirect("/login");
 	}
