@@ -30,7 +30,7 @@ const Card = ({ data }: { data: IDonation }) => {
 							{data.donation_category}
 						</span>
 					</p>
-					<h2 className="card-title mt-2">{data.title}</h2>
+					<h2 className="card-title mt-2 font-bold">{data.title}</h2>
 				</div>
 			</div>
 		</div>

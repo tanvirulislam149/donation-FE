@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "swiper/css";
+import Footer from "./components/Footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -28,6 +29,7 @@ export default function RootLayout({
 			<body className={`${inter.className} ${poppins.className}`}>
 				<Navbar />
 				{children}
+				<Footer />
 				<ToastContainer />
 			</body>
 		</html>
