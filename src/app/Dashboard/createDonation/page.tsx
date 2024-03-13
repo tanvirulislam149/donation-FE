@@ -26,9 +26,9 @@ const CreateDonation = () => {
 			});
 	};
 	return (
-		<div className="flex justify-center w-full">
+		<div className="flex justify-center w-full my-10">
 			<form id="createForm" onSubmit={handleCreate} className="md:w-1/2 w-5/6">
-				<p className="text-3xl text-center font-bold">CreateDonation</p>
+				<p className="text-3xl text-center font-bold">Create Donation</p>
 				<label className="form-control w-full">
 					<div className="label">
 						<span className="label-text">Title:</span>

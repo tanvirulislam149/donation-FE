@@ -6,24 +6,30 @@ import auth from "../../../../firebase.init";
 import axios from "axios";
 import { IDonation } from "@/types/globalTypes";
 import Link from "next/link";
+import Loading from "../Loading/Loading";
 
 const DonationCardCont = () => {
-	const [user, loading] = useAuthState(auth);
+	const [user, userLoading] = useAuthState(auth);
 	const [data, setData] = useState([]);
+	const [loading, setLoading] = useState(true);
+
 	useEffect(() => {
 		axios(`https://donation-be.onrender.com/getUserDonation/${user?.email}`)
 			.then(function (response) {
 				setData(response.data);
+				setLoading(false);
 			})
 			.catch(function (error) {
 				console.log(error);
 			});
 	}, []);
 	return (
-		<div className="flex justify-center">
+		<div className="flex justify-center mb-20">
 			<div>
 				<div className="grid lg:grid-cols-2 gap-10 md:mx-3 mx-0">
-					{data.length ? (
+					{loading ? (
+						<Loading />
+					) : data.length ? (
 						data.map((d: IDonation) => <DonationCard key={d._id} data={d} />)
 					) : (
 						<p>No Data found</p>

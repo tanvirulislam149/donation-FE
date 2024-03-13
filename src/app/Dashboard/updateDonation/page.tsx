@@ -24,7 +24,7 @@ const UpdateDonation = () => {
 	}, []);
 	return (
 		<div>
-			<div className="flex justify-center my-5">
+			<div className="flex justify-center mb-20 mt-10">
 				<div className="overflow-x-auto md:w-3/4 w-11/12">
 					<p className="text-center text-3xl font-bold mb-5">
 						Manage Donations

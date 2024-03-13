@@ -28,7 +28,7 @@ const DonationDetails = ({ data }: { data: IDonation }) => {
 			});
 	};
 	return (
-		<div className="flex justify-center my-4 md:mx-32">
+		<div className="flex justify-center my-4 mb-10 md:mx-32">
 			<div>
 				<div className="card bg-base-100">
 					<div className="md:flex">
@@ -45,7 +45,9 @@ const DonationDetails = ({ data }: { data: IDonation }) => {
 						</figure>
 						<div className="card-body md:w-2/6">
 							<div>
-								<h2 className="card-title text-3xl my-5">{data.title}</h2>
+								<h2 className="card-title text-3xl font-bold my-5">
+									{data.title}
+								</h2>
 								<p className="my-5 text-justify">{data.description}</p>
 								<div className="flex my-5">
 									<a>

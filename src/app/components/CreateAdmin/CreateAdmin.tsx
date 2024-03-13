@@ -31,7 +31,7 @@ const CreateAdmin = () => {
 	};
 
 	return (
-		<div>
+		<div className="md:m-10">
 			<table className="table">
 				{/* head */}
 				<thead>

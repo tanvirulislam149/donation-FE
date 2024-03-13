@@ -20,16 +20,16 @@ const DonationCardCont = () => {
 	}, [user]);
 	return (
 		<PrivateRoute>
-			<div className="flex justify-center my-5">
+			<div className="flex justify-center my-5 mb-20">
 				<div className="overflow-x-auto w-3/4">
 					<p className="text-center text-3xl font-bold mb-5">My Donations</p>
 					{data.length ? (
-						<table className="table">
+						<table className="table text-base">
 							{/* head */}
 							<thead>
-								<tr className="text-black">
+								<tr className="text-black text-base">
 									<th>#</th>
-									<th>title</th>
+									<th>Title</th>
 									<th>Category</th>
 									<th>Donation</th>
 								</tr>
@@ -46,7 +46,7 @@ const DonationCardCont = () => {
 							</tbody>
 						</table>
 					) : (
-						<p>No Data found</p>
+						<p className="text-center font-bold">No Data found</p>
 					)}
 				</div>
 			</div>
