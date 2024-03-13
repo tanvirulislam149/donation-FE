@@ -5,14 +5,17 @@ import axios from "axios";
 import { IDonation } from "@/types/globalTypes";
 import auth from "../../../firebase.init";
 import PrivateRoute from "../components/PrivateRoute";
+import Loading from "../components/Loading/Loading";
 
 const DonationCardCont = () => {
-	const [user, loading] = useAuthState(auth);
+	const [user, userLoading] = useAuthState(auth);
 	const [data, setData] = useState([]);
+	const [loading, setLoading] = useState(true);
 	useEffect(() => {
 		axios(`https://donation-be.onrender.com/getUserAllDonation/${user?.email}`)
 			.then(function (response) {
 				setData(response.data);
+				setLoading(false);
 			})
 			.catch(function (error) {
 				console.log(error);
@@ -23,7 +26,9 @@ const DonationCardCont = () => {
 			<div className="flex justify-center my-5 mb-20">
 				<div className="overflow-x-auto w-3/4">
 					<p className="text-center text-3xl font-bold mb-5">My Donations</p>
-					{data.length ? (
+					{loading ? (
+						<Loading />
+					) : data.length ? (
 						<table className="table text-base">
 							{/* head */}
 							<thead>

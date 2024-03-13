@@ -1,6 +1,7 @@
 "use client";
 
 import DeleteModal from "@/app/components/DeleteModal/DeleteModal";
+import Loading from "@/app/components/Loading/Loading";
 import UpdateModal from "@/app/components/UpdateModal/UpdateModal";
 import { IDonation } from "@/types/globalTypes";
 import axios from "axios";
@@ -9,11 +10,13 @@ import { useEffect, useState } from "react";
 const UpdateDonation = () => {
 	const [id, setId] = useState("");
 	const [data, setData] = useState([]);
+	const [loading, setLoading] = useState(true);
 
 	const getDonation = () => {
 		axios(`https://donation-be.onrender.com/getAllDonation`)
 			.then(function (response) {
 				setData(response.data);
+				setLoading(false);
 			})
 			.catch(function (error) {
 				console.log(error);
@@ -29,7 +32,9 @@ const UpdateDonation = () => {
 					<p className="text-center text-3xl font-bold mb-5">
 						Manage Donations
 					</p>
-					{data.length ? (
+					{loading ? (
+						<Loading />
+					) : data.length ? (
 						<table className="table">
 							{/* head */}
 							<thead>
@@ -82,7 +87,7 @@ const UpdateDonation = () => {
 							</tbody>
 						</table>
 					) : (
-						<p>No Data found</p>
+						<p className="text-center font-bold">No Data found</p>
 					)}
 				</div>
 			</div>
