@@ -9,6 +9,8 @@ import auth from "../../../firebase.init";
 import { useRouter } from "next/navigation";
 import { IUser } from "@/types/globalTypes";
 import axios from "axios";
+import Image from "next/image";
+import donate from "../../assets/donate.jpg";
 
 const Register = () => {
 	const [createUserWithEmailAndPassword, user, loading, error] =
@@ -51,69 +53,64 @@ const Register = () => {
 		}
 	};
 	return (
-		<div className="flex justify-center items-center mt-10">
-			<div className="md:w-1/4 w-5/6">
-				<p className="text-center text-4xl font-bold mb-5">Register</p>
-				<form id="register" onSubmit={handleSubmit}>
-					<div className="label">
-						<span className="label-text">Name:</span>
-					</div>
-					<input
-						name="userName"
-						type="text"
-						placeholder="Enter your name"
-						className="input input-bordered w-full"
-						required
-						onChange={(e) => setName(e.target.value)}
-					/>
-					<div className="label">
-						<span className="label-text">Email:</span>
-					</div>
-					<input
-						name="email"
-						type="email"
-						placeholder="Enter your email"
-						className="input input-bordered w-full"
-						required
-					/>
-					<div className="label">
-						<span className="label-text">Password:</span>
-					</div>
-					<input
-						name="password"
-						type="password"
-						placeholder="Enter your password"
-						className="input input-bordered w-full"
-						required
-					/>
-					<div className="label">
-						<span className="label-text">Confirm Password:</span>
-					</div>
-					<input
-						name="confirmPassword"
-						type="password"
-						placeholder="Enter confirm password"
-						className="input input-bordered w-full"
-						required
-					/>
-					<div className="mt-2">
-						<Link className="underline" href={"/login"}>
-							Go to login
-						</Link>
-					</div>
-					<p className="text-red-500">{errorMsg}</p>
-					{loading || updating ? (
-						<span className="loading loading-spinner loading-lg mt-3"></span>
-					) : (
-						<>
+		<div className="bg-base-200 shadow-2xl md:mx-44 md:my-16 mb-20 mt-6 mx-5">
+			<div className="md:flex">
+				<div className="md:w-1/2 md:block hidden">
+					<Image src={donate} alt="donate" height={450} width={450} />
+				</div>
+				<div className="flex justify-center items-center md:w-1/2 w-full md:mx-20">
+					<div className="md:w-3/4 w-11/12 py-10">
+						<p className="text-center text-4xl font-bold mb-5">Register</p>
+						<form id="register" onSubmit={handleSubmit}>
 							<input
-								type="submit"
-								value={"Register"}
-								className="btn btn-primary mt-3"
+								name="userName"
+								type="text"
+								placeholder="Enter your name"
+								className="input input-bordered rounded-full mb-4 w-full"
+								required
+								onChange={(e) => setName(e.target.value)}
 							/>
-						</>
-					)}
-				</form>
+							<input
+								name="email"
+								type="email"
+								placeholder="Enter your email"
+								className="input input-bordered rounded-full mb-4 w-full"
+								required
+							/>
+							<input
+								name="password"
+								type="password"
+								placeholder="Enter your password"
+								className="input input-bordered rounded-full mb-4 w-full"
+								required
+							/>
+							<input
+								name="confirmPassword"
+								type="password"
+								placeholder="Enter confirm password"
+								className="input input-bordered rounded-full w-full"
+								required
+							/>
+							<div className="mt-2">
+								<Link className="underline" href={"/login"}>
+									Go to login
+								</Link>
+							</div>
+							<p className="text-red-500">{errorMsg}</p>
+							{loading || updating ? (
+								<span className="loading loading-spinner loading-lg mt-3"></span>
+							) : (
+								<>
+									<input
+										type="submit"
+										value={"Register"}
+										className="btn btn-primary mt-4 rounded-full bg-green-400 border-none text-black text-base font-bold hover:bg-green-700 w-full"
+									/>
+								</>
+							)}
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
