@@ -11,6 +11,7 @@ import { IUser } from "@/types/globalTypes";
 import axios from "axios";
 import Image from "next/image";
 import donate from "../../assets/donate.jpg";
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 
 const Register = () => {
 	const [createUserWithEmailAndPassword, user, loading, error] =
@@ -18,6 +19,9 @@ const Register = () => {
 	const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 	const [errorMsg, setErrorMsg] = useState<string | undefined>("");
 	const [name, setName] = useState("");
+	const [showPass, setShowPass] = useState(false);
+	const [showConfirmPass, setShowConfirmPass] = useState(false);
+
 	const router = useRouter();
 
 	useEffect(() => {
@@ -77,20 +81,46 @@ const Register = () => {
 								className="input input-bordered rounded-full mb-4 w-full"
 								required
 							/>
-							<input
-								name="password"
-								type="password"
-								placeholder="Enter your password"
-								className="input input-bordered rounded-full mb-4 w-full"
-								required
-							/>
-							<input
-								name="confirmPassword"
-								type="password"
-								placeholder="Enter confirm password"
-								className="input input-bordered rounded-full w-full"
-								required
-							/>
+							<div className="relative">
+								<input
+									name="password"
+									type={showPass ? "text" : "password"}
+									placeholder="Enter your password"
+									className="input input-bordered rounded-full mb-4 w-full"
+									required
+								/>
+								{showPass ? (
+									<IoMdEye
+										onClick={() => setShowPass(!showPass)}
+										className="absolute top-2.5 right-3 w-7 h-7 cursor-pointer"
+									/>
+								) : (
+									<IoMdEyeOff
+										onClick={() => setShowPass(!showPass)}
+										className="absolute top-2.5 right-3 w-7 h-7 cursor-pointer"
+									/>
+								)}
+							</div>
+							<div className="relative">
+								<input
+									name="confirmPassword"
+									type={showConfirmPass ? "text" : "password"}
+									placeholder="Enter confirm password"
+									className="input input-bordered rounded-full w-full"
+									required
+								/>
+								{showConfirmPass ? (
+									<IoMdEye
+										onClick={() => setShowConfirmPass(!showConfirmPass)}
+										className="absolute top-2.5 right-3 w-7 h-7 cursor-pointer"
+									/>
+								) : (
+									<IoMdEyeOff
+										onClick={() => setShowConfirmPass(!showConfirmPass)}
+										className="absolute top-2.5 right-3 w-7 h-7 cursor-pointer"
+									/>
+								)}
+							</div>
 							<div className="mt-2">
 								<Link className="underline" href={"/login"}>
 									Go to login
