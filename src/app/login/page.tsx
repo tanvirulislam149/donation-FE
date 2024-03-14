@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import auth from "../../../firebase.init";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import donate from "../../assets/donate.jpg";
+import Image from "next/image";
 
 const Login = () => {
 	const [signInWithEmailAndPassword, user, loading, error] =
@@ -34,46 +36,52 @@ const Login = () => {
 		signInWithEmailAndPassword(userEmail, userPassword);
 	};
 	return (
-		<div className="flex justify-center items-center mt-20">
-			<div className="md:w-1/4 w-5/6">
-				<form id="login" onSubmit={handleSubmit}>
-					<p className="text-center text-4xl font-bold mb-5">Login</p>
-					<div className="label">
-						<span className="label-text">Email:</span>
+		<div className="bg-base-200 shadow-2xl md:mx-44 md:my-16">
+			<div className="md:flex">
+				<div className="md:w-1/2">
+					<Image src={donate} alt="donate" height={450} width={450} />
+				</div>
+				<div className="flex justify-center items-center md:w-1/2 mx-20">
+					<div className="w-3/4">
+						<form id="login" onSubmit={handleSubmit}>
+							<p className="text-center text-4xl font-bold">
+								Welcome to Chariti
+							</p>
+							<p className="text-center text-sm font-bold my-5">
+								Login to your account
+							</p>
+							<input
+								name="email"
+								type="email"
+								placeholder="Enter your email"
+								className="input input-bordered w-full rounded-full border-none mb-4"
+								required
+							/>
+							<input
+								name="password"
+								type="password"
+								placeholder="Enter your password"
+								className="input input-bordered w-full rounded-full border-none"
+								required
+							/>
+							<div className="mt-2">
+								<Link className="underline" href={"/register"}>
+									Go to register
+								</Link>
+							</div>
+							<p className="text-red-500">{errorMsg}</p>
+							{loading ? (
+								<span className="loading loading-spinner loading-lg mt-3"></span>
+							) : (
+								<input
+									type="submit"
+									value={"Login"}
+									className="btn btn-primary mt-4 rounded-full bg-green-400 border-none text-black text-base font-bold hover:bg-green-700 w-full"
+								/>
+							)}
+						</form>
 					</div>
-					<input
-						name="email"
-						type="email"
-						placeholder="Enter your email"
-						className="input input-bordered w-full"
-						required
-					/>
-					<div className="label">
-						<span className="label-text">Password:</span>
-					</div>
-					<input
-						name="password"
-						type="password"
-						placeholder="Enter your password"
-						className="input input-bordered w-full"
-						required
-					/>
-					<div className="mt-2">
-						<Link className="underline" href={"/register"}>
-							Go to register
-						</Link>
-					</div>
-					<p className="text-red-500">{errorMsg}</p>
-					{loading ? (
-						<span className="loading loading-spinner loading-lg mt-3"></span>
-					) : (
-						<input
-							type="submit"
-							value={"Login"}
-							className="btn btn-primary mt-3"
-						/>
-					)}
-				</form>
+				</div>
 			</div>
 		</div>
 	);
