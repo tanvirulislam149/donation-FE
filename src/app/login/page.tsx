@@ -7,11 +7,13 @@ import auth from "../../../firebase.init";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import donate from "../../assets/donate.jpg";
 import Image from "next/image";
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 
 const Login = () => {
 	const [signInWithEmailAndPassword, user, loading, error] =
 		useSignInWithEmailAndPassword(auth);
 	const [errorMsg, setErrorMsg] = useState<string | undefined>("");
+	const [showPass, setShowPass] = useState(false);
 	const router = useRouter();
 
 	useEffect(() => {
@@ -57,13 +59,26 @@ const Login = () => {
 								className="input input-bordered w-full rounded-full border-none mb-4"
 								required
 							/>
-							<input
-								name="password"
-								type="password"
-								placeholder="Enter your password"
-								className="input input-bordered w-full rounded-full border-none"
-								required
-							/>
+							<div className="relative">
+								<input
+									name="password"
+									type={showPass ? "text" : "password"}
+									placeholder="Enter your password"
+									className="input input-bordered w-full rounded-full border-none"
+									required
+								/>
+								{showPass ? (
+									<IoMdEye
+										onClick={() => setShowPass(!showPass)}
+										className="absolute top-2.5 right-3 w-7 h-7 cursor-pointer"
+									/>
+								) : (
+									<IoMdEyeOff
+										onClick={() => setShowPass(!showPass)}
+										className="absolute top-2.5 right-3 w-7 h-7 cursor-pointer"
+									/>
+								)}
+							</div>
 							<div className="mt-2">
 								<Link className="underline" href={"/register"}>
 									Go to register
