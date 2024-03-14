@@ -36,13 +36,13 @@ const Login = () => {
 		signInWithEmailAndPassword(userEmail, userPassword);
 	};
 	return (
-		<div className="bg-base-200 shadow-2xl md:mx-44 md:my-16">
+		<div className="bg-base-200 shadow-2xl md:mx-44 md:my-16 mb-20 mt-6 mx-5">
 			<div className="md:flex">
-				<div className="md:w-1/2">
+				<div className="md:w-1/2 md:block hidden">
 					<Image src={donate} alt="donate" height={450} width={450} />
 				</div>
-				<div className="flex justify-center items-center md:w-1/2 mx-20">
-					<div className="w-3/4">
+				<div className="flex justify-center items-center md:w-1/2 w-full md:mx-20">
+					<div className="md:w-3/4 w-11/12 py-10">
 						<form id="login" onSubmit={handleSubmit}>
 							<p className="text-center text-4xl font-bold">
 								Welcome to Chariti
